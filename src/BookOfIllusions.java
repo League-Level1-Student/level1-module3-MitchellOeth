@@ -46,10 +46,12 @@ JFrame JFrame = new JFrame();
 		// 3. set the size of the frame
 		JFrame.setSize(500, 500);
 		// 4. find 2 images and save them to your project’s default package
-		
 		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
+		String up = "up.jpg";
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
+JLabel label;
 		// 7. use the "loadImage..." methods below to initialize your JLabel
+loadImageFromComputer(up);
 		// 8. add your JLabel to the frame
 		// 9. call the pack() method on the frame
 		// 10. add a mouse listener to your frame (hint: use *this*)
