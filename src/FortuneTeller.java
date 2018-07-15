@@ -36,8 +36,12 @@ frame.addMouseListener(this);
 
     static void begin() {
    	 // 3. Welcome the user. Give them a hint for the secret location.
-    	JOptionPane.showMessageDialog("Welcome, person. Here's a hint. The secret location is Arkansas");
+    	JOptionPane.showMessageDialog(null, "Welcome, person. Here's a hint. The secret location is somewhere");
     }
+    private void playSound(String fileName) {
+		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
+		sound.play();
+	}
 
     @Override
     public void mousePressed(MouseEvent e) {
@@ -53,13 +57,13 @@ System.out.println(mouseY);
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-String answer = 
+JOptionPane.showMessageDialog(null, "ask me a question.");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
    		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
-
+playSound("creepy-noise.wav");
    		 // 11. Use the pause() method below to wait until your music has finished
-
+pause(10);
    		 // 12. Insert your completed Magic 8 ball recipe (http://bit.ly/Zdrf6d) here
 
    	 }
