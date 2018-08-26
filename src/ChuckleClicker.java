@@ -22,6 +22,7 @@ public class ChuckleClicker implements ActionListener {
 		button.setText("joke");
 		button1.setText("punchline");
 		button.addActionListener(this);
+		frame.pack();
 	}
 
 	public static void main(String[] args) {
