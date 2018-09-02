@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -15,6 +16,7 @@ public class Calculator implements ActionListener {
 	JButton div = new JButton();
 	JTextField text1 = new JTextField(18);
 	JTextField text2 = new JTextField(18);
+	int answer;
 
 	public void simpleCalculator() {
 		frame.add(panel);
@@ -43,19 +45,23 @@ public class Calculator implements ActionListener {
 	}
 
 	public void Add() {
-
+answer = Integer.parseInt(text1.getText()) + Integer.parseInt(text2.getText());
+	JOptionPane.showMessageDialog(null, answer);
 	}
 
 	public void Sub() {
-
-	}
+answer = Integer.parseInt(text1.getText()) - Integer.parseInt(text2.getText());
+JOptionPane.showMessageDialog(null, answer);
+}
 
 	public void Mul() {
-
-	}
+		answer = Integer.parseInt(text1.getText()) * Integer.parseInt(text2.getText());
+		JOptionPane.showMessageDialog(null, answer);
+		}
 
 	public void Div() {
-
+		answer = Integer.parseInt(text1.getText()) / Integer.parseInt(text2.getText());
+		JOptionPane.showMessageDialog(null, answer);
 	}
 
 	public static void main(String[] args) {
@@ -65,6 +71,18 @@ public class Calculator implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		// String val = jtf.getText(); This gets what you enter into the text1 box.
+		if(event.getSource().equals(add)) {
+			Add();
+		}
+		if(event.getSource().equals(sub)) {
+			Sub();
+		}
+		if(event.getSource().equals(mul)) {
+			Mul();
+		}
+		if(event.getSource().equals(div)) {
+			Div();
+		}
+
 	}
 }
