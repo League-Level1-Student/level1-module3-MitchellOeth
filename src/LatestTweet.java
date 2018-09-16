@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -15,6 +16,8 @@ JFrame frame = new JFrame();
 JPanel panel = new JPanel();
 JTextField field = new JTextField(15);
 JButton button = new JButton();
+	static LatestTweet tweet = new LatestTweet();
+
 public void globglogabgalab() {
 	frame.add(panel);
 	frame.setVisible(true);
@@ -27,17 +30,14 @@ public void globglogabgalab() {
 	button.addActionListener(this);
 }
 public static void main(String[] args) {
-	LatestTweet tweet = new LatestTweet();
 
 	tweet.globglogabgalab();
 }
 public void actionPerformed(ActionEvent event) {
 	JButton buttonPressed = (JButton) event.getSource(); 
-	if(buttonPressed.equals(button)) {
-		System.out.println("Tweet Tweet");
-		tweet.getLatestTweet(field);
-
-	}
+	if(buttonPressed.equals(button)) {}
+	String Globglogabgalab = tweet.getLatestTweet(field.getText());
+	JOptionPane.showMessageDialog(null, Globglogabgalab);
 	}
 private String getLatestTweet(String searchingFor) {
 
