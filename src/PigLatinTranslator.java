@@ -96,7 +96,8 @@ public class PigLatinTranslator implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-translator.translate(field.getText());
+//translator.translate(field.getText());
+field1.setText(translate(field.getText()));
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
