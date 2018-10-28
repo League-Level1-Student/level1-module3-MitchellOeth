@@ -1,12 +1,15 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-public class WhackAMole{
+public class WhackAMole implements ActionListener{
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	
+	JButton NoThisIsPatrick = new JButton("mole!");
 	public static void main(String[] args) {
 		WhackAMole whack = new WhackAMole();
 		whack.globglogabgalab();
@@ -18,18 +21,40 @@ public class WhackAMole{
 		frame.setSize(2040, 1900);
 	}
 	public void drawButtons(int bob) {
-		Random rand = new Random(bob);
+		Random rand = new Random();
 		int b = rand.nextInt(bob);
-		for (int i = 1; i < bob; i++) {
+		
+		NoThisIsPatrick.addActionListener(this);
+		for (int i = 0; i < bob; i++) {
 			System.out.println(i);
-			panel.add(new JButton());
+			NoThisIsPatrick = new JButton();
+			NoThisIsPatrick.addActionListener(this);
+			panel.add(NoThisIsPatrick);
 			if (i == b) {
-				JButton NoThisIsPatrick = new JButton("mole!");
 				System.out.println("f"+ b);
-				panel.add(NoThisIsPatrick);
+				NoThisIsPatrick.setText("mole!");				
+	}
 			}
-		}
 		frame.add(panel);
 		frame.setVisible(true);
+			
+		}
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		JButton buttonPressed = (JButton) event.getSource();
+		System.out.println(buttonPressed.getText());
+	if(buttonPressed.getText().equals("")) {
+		speak("missed");
 	}
-}
+	
+	}
+		
+			void speak(String words) {
+			     try {
+			          Runtime.getRuntime().exec("say " + words).waitFor();
+			     } catch (Exception e) {
+			          e.printStackTrace();
+			     }
+			}
+		}
+
