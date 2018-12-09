@@ -104,6 +104,8 @@ public class SlotMachine implements ActionListener {
 		left.setPreferredSize(new Dimension(570, 1000));
 		right.setPreferredSize(new Dimension(570, 1000));
 		center.setPreferredSize(new Dimension(570, 1000));
+		
+		frame.pack();
 		if(bob==billeth) {
 			if (bob==joe) {
 				if(billeth==joe) {
@@ -112,7 +114,6 @@ public class SlotMachine implements ActionListener {
 				}
 			}
 		}
-		frame.pack();
 	}
 	public JLabel loadImage(String fileName) {
 		URL imageURL = getClass().getResource(fileName);
