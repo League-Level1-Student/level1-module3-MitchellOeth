@@ -21,13 +21,15 @@ public class PracticeTest implements ActionListener {
 
 	public void globglogabgalab() {
 		submit.addActionListener(this);
-		hint.addActionListener(this);
 		submit.setSize(100, 50);
 		submit.setLocation(450, 300);
-		hint.setLocation(50,300);
 		submit.setText("Submit");
-		hint.setText("Hint");
+
+		hint.addActionListener(this);
 		hint.setSize(100, 50);
+		hint.setLocation(50, 300);
+		hint.setText("Hint");
+
 		frame.add(label);
 		frame.add(submit);
 		frame.add(hint);
@@ -46,6 +48,7 @@ public class PracticeTest implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(null, "You got the wrong answer");
 			}
+			System.exit(0);
 		}
 	}
 }
